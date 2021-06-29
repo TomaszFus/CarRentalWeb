@@ -37,9 +37,11 @@
                 @Html.DisplayFor(modelItem => item.Availability)
             </td>
             <td>
-                
-                @Html.ActionLink("Szczegóły", "Details", new {  id=item.Id  }) |
-                @Html.ActionLink("Usuń", "Delete", new { id=item.Id  })
+
+                @Html.ActionLink("Modyfikuj", "Edit", new { id = item.Id }) |
+                @Html.ActionLink("Szczegóły", "Details", new { id = item.Id }) |
+                @Html.ActionLink("Usuń", "Delete", new { id = item.Id })
+
             </td>
         </tr>
 }

@@ -29,5 +29,8 @@ namespace Projekt.Models
         public int Course { get; set; }
         [DisplayName("Dostępność")]
         public bool Availability { get; set; }
+        [DisplayName("Cena")]
+        //[Required(ErrorMessage ="Podaj cenę")]
+        public double Price { get; set; }
     }
 }

@@ -36,5 +36,17 @@ namespace Projekt.Repositories
                 _context.SaveChanges();
             }
         }
+
+        public void Update(int carId, CarModel car)
+        {
+            var result = _context.Cars.SingleOrDefault(x => x.Id == carId);
+            if (result != null)
+            {
+                result.Price = car.Price;
+                
+
+                _context.SaveChanges();
+            }
+        }
     }
 }

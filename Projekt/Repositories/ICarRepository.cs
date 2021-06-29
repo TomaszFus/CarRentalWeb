@@ -12,5 +12,6 @@ namespace Projekt.Repositories
         List<CarModel> GetAllCars();
         void Add(CarModel car);
         void Delete(int carId);
+        void Update(int carId, CarModel car);
     }
 }

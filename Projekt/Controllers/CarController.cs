@@ -44,7 +44,22 @@ namespace Projekt.Controllers
             _carRepository.Add(carModel);
             return RedirectToAction(nameof(Index));
         }
-        
+
+        // GET: Car/Edit
+        public ActionResult Edit(int id)
+        {
+            return View(_carRepository.Get(id));
+        }
+
+        // POST: Car/Edit
+        [HttpPost]
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit(int id, CarModel carModel)
+        {
+            _carRepository.Update(id, carModel);
+            return RedirectToAction(nameof(Index));
+        }
+
 
         // GET: Car/Delete
         public ActionResult Delete(int id)

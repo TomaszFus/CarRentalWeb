@@ -8,6 +8,7 @@ using Projekt.Models;
 using Projekt.Repositories;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -56,6 +57,8 @@ namespace Projekt
                     name: "default",
                     pattern: "{controller=Customer}/{action=Index}/{id?}");
             });
+
+            
         }
     }
 }
