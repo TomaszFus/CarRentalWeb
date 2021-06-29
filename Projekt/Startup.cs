@@ -30,6 +30,7 @@ namespace Projekt
             options.UseSqlServer(Configuration.GetConnectionString("CarRentalDatabase")));
 
             services.AddTransient<ICarRepository, CarRepository>();
+            services.AddTransient<ICustomerRepository, CustomerRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -53,7 +54,7 @@ namespace Projekt
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Car}/{action=Index}/{id?}");
+                    pattern: "{controller=Customer}/{action=Index}/{id?}");
             });
         }
     }
