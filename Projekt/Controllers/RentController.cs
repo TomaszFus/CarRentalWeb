@@ -53,7 +53,7 @@ namespace Projekt.Controllers
         {
             int carId = int.Parse(Request.Form["Cars"].ToString());
             int customerId = int.Parse(Request.Form["Customers"].ToString());
-            _rentRepository.AddRent(rentModel);
+            _rentRepository.AddRent(rentModel, carId, customerId);
             return RedirectToAction(nameof(Index));
         }
 

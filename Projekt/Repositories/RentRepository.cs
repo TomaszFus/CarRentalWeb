@@ -10,9 +10,13 @@ namespace Projekt.Repositories
     public class RentRepository : IRentRepository
     {
         private readonly CarRentalContext _context;
-        public RentRepository(CarRentalContext context)
+        private readonly ICarRepository _carRepository;
+        private readonly ICustomerRepository _customerRepository;
+        public RentRepository(CarRentalContext context, ICarRepository carRepository, ICustomerRepository customerRepository)
         {
             _context = context;
+            _carRepository = carRepository;
+            _customerRepository = customerRepository;
         }
         public RentModel Get(int rentId)
             => _context.Rents.Include(c=>c.Car).Include(z=>z.Customer).SingleOrDefault(x => x.Id == rentId);
@@ -22,28 +26,29 @@ namespace Projekt.Repositories
         {
             return _context.Rents.Include(x => x.Car).Include(z=>z.Customer).ToList();
         }
-        public void AddRent(RentModel rent)
+        public void AddRent(RentModel rent, int carId, int customerId)
         {
-            
-            rent.RentDate = DateTime.Today;
-            
-            rent.Ended = false;
-            //rent.Car.Brand = "dasd";
-            //rent.Car.Model = "dasd";
-            //rent.Car.Year = 123;
-            //rent.Car.Course = 123;
-            //rent.Customer.FirstName = "ads";
-            //rent.Customer.LastName = "ads";
-            //rent.Customer.PhoneNumber = "456465";
+            var car = _carRepository.Get(carId);
+            var customer = _customerRepository.Get(customerId);
+            car.Availability = false;
 
-            //rent.Car.Availability = false;
-           
+            rent.Car = car;
+            rent.Customer = customer;
+            rent.RentDate = DateTime.Today;
+            rent.Ended = false;
+            
+            _context.Cars.Update(car);
             _context.Rents.Add(rent);
             _context.SaveChanges();
-        }   
-        
-        
+        }
 
+        public void EndRent(RentModel rent, int carId)
+        {
+            var car = _carRepository.Get(carId);
+            car.Availability = true;
+            _context.Cars.Update(car);
 
+            _context.SaveChanges();
+        }
     }
 }

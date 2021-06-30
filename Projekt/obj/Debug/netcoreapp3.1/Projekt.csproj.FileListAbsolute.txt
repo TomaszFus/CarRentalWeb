@@ -157,3 +157,12 @@ G:\Programowanie\C#\.net core\Projekt\Projekt\obj\Debug\netcoreapp3.1\Razor\View
 G:\Programowanie\C#\.net core\Projekt\Projekt\obj\Debug\netcoreapp3.1\Razor\Views\Rent\Index.cshtml.g.cs
 G:\Programowanie\C#\.net core\Projekt\Projekt\obj\Debug\netcoreapp3.1\Razor\Views\Rent\Create.cshtml.g.cs
 G:\Programowanie\C#\.net core\Projekt\Projekt\obj\Debug\netcoreapp3.1\Razor\Views\Rent\Details.cshtml.g.cs
+G:\Programowanie\C#\.net core\Projekt\Projekt\bin\Debug\netcoreapp3.1\EntityFramework.SqlServer.dll
+G:\Programowanie\C#\.net core\Projekt\Projekt\bin\Debug\netcoreapp3.1\EntityFramework.dll
+G:\Programowanie\C#\.net core\Projekt\Projekt\bin\Debug\netcoreapp3.1\System.CodeDom.dll
+G:\Programowanie\C#\.net core\Projekt\Projekt\bin\Debug\netcoreapp3.1\System.Data.SqlClient.dll
+G:\Programowanie\C#\.net core\Projekt\Projekt\bin\Debug\netcoreapp3.1\runtimes\win-arm64\native\sni.dll
+G:\Programowanie\C#\.net core\Projekt\Projekt\bin\Debug\netcoreapp3.1\runtimes\win-x64\native\sni.dll
+G:\Programowanie\C#\.net core\Projekt\Projekt\bin\Debug\netcoreapp3.1\runtimes\win-x86\native\sni.dll
+G:\Programowanie\C#\.net core\Projekt\Projekt\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+G:\Programowanie\C#\.net core\Projekt\Projekt\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll

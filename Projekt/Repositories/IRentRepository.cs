@@ -10,7 +10,8 @@ namespace Projekt.Repositories
     {
         RentModel Get(int rentId);
         List<RentModel> GetAllRents();
-        void AddRent(RentModel rent);
+        void AddRent(RentModel rent, int carId, int customerId);
+        void EndRent(RentModel rent, int carId);
         
         
     }
