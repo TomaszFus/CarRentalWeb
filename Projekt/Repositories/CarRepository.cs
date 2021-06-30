@@ -13,6 +13,11 @@ namespace Projekt.Repositories
         {
             _context = context;
         }
+
+        public CarRepository()
+        {
+        }
+
         public CarModel Get(int carId)
             => _context.Cars.SingleOrDefault(x => x.Id == carId);
         
