@@ -15,5 +15,6 @@ namespace Projekt.Models
 
         public DbSet<CarModel> Cars { get; set; }
         public DbSet<CustomerModel> Customers { get; set; }
+        public DbSet<RentModel> Rents { get; set; }
     }
 }

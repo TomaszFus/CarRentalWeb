@@ -32,6 +32,7 @@ namespace Projekt
 
             services.AddTransient<ICarRepository, CarRepository>();
             services.AddTransient<ICustomerRepository, CustomerRepository>();
+            services.AddTransient<IRentRepository, RentRepository>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

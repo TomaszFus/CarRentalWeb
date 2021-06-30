@@ -30,7 +30,10 @@ namespace Projekt.Models
         [DisplayName("Dostępność")]
         public bool Availability { get; set; }
         [DisplayName("Cena")]
-        //[Required(ErrorMessage ="Podaj cenę")]
+        [Required(ErrorMessage ="Podaj cenę")]
         public double Price { get; set; }
+        [DisplayName("Numer rejestracyjny")]
+        [MaxLength(7)]
+        public string NumberPlate { get; set; }
     }
 }
