@@ -155,3 +155,5 @@ G:\Programowanie\C#\.net core\Projekt\Projekt\obj\Debug\netcoreapp3.1\Razor\View
 G:\Programowanie\C#\.net core\Projekt\Projekt\obj\Debug\netcoreapp3.1\Razor\Views\Customer\Delete.cshtml.g.cs
 G:\Programowanie\C#\.net core\Projekt\Projekt\obj\Debug\netcoreapp3.1\Razor\Views\Car\Edit.cshtml.g.cs
 G:\Programowanie\C#\.net core\Projekt\Projekt\obj\Debug\netcoreapp3.1\Razor\Views\Rent\Index.cshtml.g.cs
+G:\Programowanie\C#\.net core\Projekt\Projekt\obj\Debug\netcoreapp3.1\Razor\Views\Rent\Create.cshtml.g.cs
+G:\Programowanie\C#\.net core\Projekt\Projekt\obj\Debug\netcoreapp3.1\Razor\Views\Rent\Details.cshtml.g.cs

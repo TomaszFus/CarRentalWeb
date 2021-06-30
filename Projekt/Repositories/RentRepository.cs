@@ -15,7 +15,7 @@ namespace Projekt.Repositories
             _context = context;
         }
         public RentModel Get(int rentId)
-            => _context.Rents.SingleOrDefault(x => x.Id == rentId);
+            => _context.Rents.Include(c=>c.Car).Include(z=>z.Customer).SingleOrDefault(x => x.Id == rentId);
         
 
         public List<RentModel> GetAllRents()
@@ -24,7 +24,19 @@ namespace Projekt.Repositories
         }
         public void AddRent(RentModel rent)
         {
-            rent.RentDate = DateTime.Now;
+            
+            rent.RentDate = DateTime.Today;
+            rent.Ended = false;
+            //rent.Car.Brand = "dasd";
+            //rent.Car.Model = "dasd";
+            //rent.Car.Year = 123;
+            //rent.Car.Course = 123;
+            //rent.Customer.FirstName = "ads";
+            //rent.Customer.LastName = "ads";
+            //rent.Customer.PhoneNumber = "456465";
+
+            //rent.Car.Availability = false;
+           
             _context.Rents.Add(rent);
             _context.SaveChanges();
         }        

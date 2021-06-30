@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
@@ -14,6 +15,7 @@ namespace Projekt.Models
         public int Id { get; set; }
         public CarModel Car { get; set; }
         public CustomerModel Customer { get; set; }
+        [DisplayName("Data wypożyczenia")]
         public DateTime RentDate { get; set; }
         public DateTime DeliveryDate { get; set; }
         public double Cost { get; set; }

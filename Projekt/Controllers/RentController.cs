@@ -22,7 +22,7 @@ namespace Projekt.Controllers
             return View(_rentRepository.GetAllRents());
         }
 
-        // GET: RentController/Details/5
+        // GET: Rent/Details/5
         public ActionResult Details(int id)
         {
             return View(_rentRepository.Get(id));
