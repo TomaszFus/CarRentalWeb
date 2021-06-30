@@ -10,6 +10,7 @@ namespace Projekt.Repositories
     {
         CarModel Get(int carId);
         List<CarModel> GetAllCars();
+        List<CarModel> GetAvailableCars();
         void Add(CarModel car);
         void Delete(int carId);
         void Update(int carId, CarModel car);

@@ -26,6 +26,7 @@ namespace Projekt.Repositories
         {
             
             rent.RentDate = DateTime.Today;
+            
             rent.Ended = false;
             //rent.Car.Brand = "dasd";
             //rent.Car.Model = "dasd";
@@ -39,6 +40,10 @@ namespace Projekt.Repositories
            
             _context.Rents.Add(rent);
             _context.SaveChanges();
-        }        
+        }   
+        
+        
+
+
     }
 }

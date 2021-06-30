@@ -11,5 +11,7 @@ namespace Projekt.Repositories
         RentModel Get(int rentId);
         List<RentModel> GetAllRents();
         void AddRent(RentModel rent);
+        
+        
     }
 }

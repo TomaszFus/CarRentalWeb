@@ -53,5 +53,10 @@ namespace Projekt.Repositories
                 _context.SaveChanges();
             }
         }
+
+        public List<CarModel> GetAvailableCars()
+        {
+            return _context.Cars.Where(x => x.Availability == true).ToList();
+        }
     }
 }
