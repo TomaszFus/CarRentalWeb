@@ -24,7 +24,7 @@ namespace Projekt.Repositories
 
         public List<RentModel> GetAllRents()
         {
-            return _context.Rents.Include(x => x.Car).Include(z=>z.Customer).ToList();
+            return _context.Rents.Include(x => x.Car).Include(z=>z.Customer).Where(c=>c.Ended==false).ToList();
         }
         public void AddRent(RentModel rent, int carId, int customerId)
         {
@@ -42,13 +42,34 @@ namespace Projekt.Repositories
             _context.SaveChanges();
         }
 
-        public void EndRent(RentModel rent, int carId)
+        public void EndRent(int rentId, RentModel rent)
         {
-            var car = _carRepository.Get(carId);
+            
+            var result = _context.Rents.Include(x=>x.Car).Include(z=>z.Customer).SingleOrDefault(x => x.Id == rentId);
+            var car = _carRepository.Get(result.Car.Id);
             car.Availability = true;
             _context.Cars.Update(car);
+            if (result!=null)
+            {
+                result.DeliveryDate = rent.DeliveryDate;
+                result.Cost = rent.Cost;
+                result.Ended = true;
+            }
+            
 
             _context.SaveChanges();
         }
+
+        //public void Update(int rentId, RentModel rent)
+        //{
+        //    var result = _context.Rents.SingleOrDefault(x => x.Id == rentId);
+        //    if (result != null)
+        //    {
+        //        result.DeliveryDate = rent.DeliveryDate;
+                
+
+        //        _context.SaveChanges();
+        //    }
+        //}
     }
 }

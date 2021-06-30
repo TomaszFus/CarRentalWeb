@@ -60,22 +60,28 @@ namespace Projekt.Controllers
         // GET: RentController/Edit/5
         public ActionResult Edit(int id)
         {
-            return View();
+            var rent = _rentRepository.Get(id);
+            rent.DeliveryDate = DateTime.Today;
+            TimeSpan time = rent.DeliveryDate - rent.RentDate;
+            int rentTime = time.Days;
+            if (rentTime==0)
+            {
+                rent.Cost = rent.Car.Price;
+            }
+            else
+            rent.Cost = rentTime * rent.Car.Price;
+            
+            return View(_rentRepository.Get(id));
         }
 
         // POST: RentController/Edit/5
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit(int id, IFormCollection collection)
+        public ActionResult Edit(int id, RentModel rentModel)
         {
-            try
-            {
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
+            _rentRepository.EndRent(id, rentModel);
+            return RedirectToAction(nameof(Index));
+            
         }
 
         // GET: RentController/Delete/5

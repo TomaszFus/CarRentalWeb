@@ -11,8 +11,9 @@ namespace Projekt.Repositories
         RentModel Get(int rentId);
         List<RentModel> GetAllRents();
         void AddRent(RentModel rent, int carId, int customerId);
-        void EndRent(RentModel rent, int carId);
-        
-        
+        void EndRent(int rentId, RentModel rent);
+        //void Update(int rentId, RentModel rent);
+
+
     }
 }
