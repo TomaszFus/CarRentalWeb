@@ -76,7 +76,7 @@ namespace Projekt.Controllers
             if (car.Availability==true)
             {
                 _carRepository.Delete(id);
-            }            
+            }
             return RedirectToAction(nameof(Index));
             
         }

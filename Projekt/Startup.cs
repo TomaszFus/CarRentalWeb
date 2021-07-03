@@ -56,7 +56,7 @@ namespace Projekt
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Customer}/{action=Index}/{id?}");
+                    pattern: "{controller=Rent}/{action=Index}/{id?}");
             });
 
             

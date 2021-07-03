@@ -4,17 +4,12 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Wypożyczenia</h1>
+<h1>Wypożyczenia zakończone</h1>
 
-<p>
-    <a asp-action="Create">Wypożycz samochód</a>
-</p>
+
 <table class="table">
     <thead>
         <tr>
-            <th>
-                @Html.DisplayNameFor(model => model.Car.Brand)
-            </th>
             <th>
                 @Html.DisplayNameFor(model => model.Customer.FirstName)
             </th>
@@ -22,7 +17,16 @@
                 @Html.DisplayNameFor(model => model.Customer.LastName)
             </th>
             <th>
+                @Html.DisplayNameFor(model => model.Car.NumberPlate)
+            </th>
+            <th>
                 @Html.DisplayNameFor(model => model.RentDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DeliveryDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Cost)
             </th>
             <th></th>
         </tr>
@@ -31,20 +35,27 @@
 @foreach (var item in Model) {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => item.Car.Brand)
-            </td>
-            <td>
                 @Html.DisplayFor(modelItem => item.Customer.FirstName)
             </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Customer.LastName)
             </td>
             <td>
-                @Html.DisplayFor(modelItem => item.RentDate);
+                @Html.DisplayFor(modelItem => item.Car.NumberPlate)
             </td>
             <td>
-                @Html.ActionLink("Zakończ", "Edit", new { id=item.Id }) |
-                @Html.ActionLink("Szczegóły", "Details", new { id=item.Id }) 
+                @Html.DisplayFor(modelItem => item.RentDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DeliveryDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Cost)
+            </td>
+            <td>
+
+                @Html.ActionLink("Szczegóły", "Details", new { id=item.Id })
+
             </td>
         </tr>
 }

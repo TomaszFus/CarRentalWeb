@@ -24,14 +24,12 @@ namespace Projekt.Models
         [DisplayName("Rok produkcji")]
         [Required(ErrorMessage = "Podaj rok produkcji")]
         public int Year { get; set; }
-        [DisplayName("Przebieg")]
-        [Required(ErrorMessage = "Podaj przebieg")]
-        public int Course { get; set; }
         [DisplayName("Dostępność")]
         public bool Availability { get; set; }
         [DisplayName("Cena")]
         [Required(ErrorMessage ="Podaj cenę")]
         public double Price { get; set; }
+        [Required(ErrorMessage = "Podaj numer rejestracyjny")]
         [DisplayName("Numer rejestracyjny")]
         [MaxLength(7)]
         public string NumberPlate { get; set; }

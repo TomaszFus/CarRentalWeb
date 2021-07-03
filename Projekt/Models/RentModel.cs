@@ -17,8 +17,11 @@ namespace Projekt.Models
         public CustomerModel Customer { get; set; }
         [DisplayName("Data wypożyczenia")]
         public DateTime RentDate { get; set; }
+        [DisplayName("Data zawrotu")]
         public DateTime DeliveryDate { get; set; }
+        [DisplayName("Koszt wypożyczenia")]
         public double Cost { get; set; }
+        [DisplayName("Zakończone")]
         public bool Ended { get; set; }
 
 

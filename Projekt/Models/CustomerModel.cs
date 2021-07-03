@@ -24,6 +24,7 @@ namespace Projekt.Models
         [DisplayName("Telefon")]
         [Required(ErrorMessage = "Podaj telefon")]
         [MaxLength(9)]
+        [DataType(DataType.PhoneNumber, ErrorMessage = "Not a number")]
         public string PhoneNumber { get; set; }
 
     }

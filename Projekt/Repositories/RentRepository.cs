@@ -26,6 +26,10 @@ namespace Projekt.Repositories
         {
             return _context.Rents.Include(x => x.Car).Include(z=>z.Customer).Where(c=>c.Ended==false).ToList();
         }
+        public List<RentModel> GetEndedRents()
+        {
+            return _context.Rents.Include(x => x.Car).Include(z => z.Customer).Where(c => c.Ended == true).ToList();
+        }
         public void AddRent(RentModel rent, int carId, int customerId)
         {
             var car = _carRepository.Get(carId);
@@ -60,13 +64,15 @@ namespace Projekt.Repositories
             _context.SaveChanges();
         }
 
+        
+
         //public void Update(int rentId, RentModel rent)
         //{
         //    var result = _context.Rents.SingleOrDefault(x => x.Id == rentId);
         //    if (result != null)
         //    {
         //        result.DeliveryDate = rent.DeliveryDate;
-                
+
 
         //        _context.SaveChanges();
         //    }

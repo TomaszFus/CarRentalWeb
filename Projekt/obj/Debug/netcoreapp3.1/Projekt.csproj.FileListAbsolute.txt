@@ -167,3 +167,5 @@ G:\Programowanie\C#\.net core\Projekt\Projekt\bin\Debug\netcoreapp3.1\runtimes\w
 G:\Programowanie\C#\.net core\Projekt\Projekt\bin\Debug\netcoreapp3.1\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
 G:\Programowanie\C#\.net core\Projekt\Projekt\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
 G:\Programowanie\C#\.net core\Projekt\Projekt\obj\Debug\netcoreapp3.1\Razor\Views\Rent\Edit.cshtml.g.cs
+G:\Programowanie\C#\.net core\Projekt\Projekt\obj\Debug\netcoreapp3.1\Razor\Views\EndedRent\Index.cshtml.g.cs
+G:\Programowanie\C#\.net core\Projekt\Projekt\obj\Debug\netcoreapp3.1\Razor\Views\EndedRent\Details.cshtml.g.cs

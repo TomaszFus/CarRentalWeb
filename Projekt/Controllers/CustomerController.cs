@@ -12,9 +12,11 @@ namespace Projekt.Controllers
     public class CustomerController : Controller
     {
         private readonly ICustomerRepository _customerRepository;
-        public CustomerController(ICustomerRepository customerRepository)
+        private readonly IRentRepository _rentRepository;
+        public CustomerController(ICustomerRepository customerRepository, IRentRepository rentRepository)
         {
             _customerRepository = customerRepository;
+            _rentRepository = rentRepository;
         }
         // GET: CustomerController
         public ActionResult Index()
@@ -69,7 +71,21 @@ namespace Projekt.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Delete(int id, CustomerModel customerModel)
         {
-            _customerRepository.Delete(id);
+          
+            var rents = _rentRepository.GetAllRents();
+            bool exist = false;
+            foreach (var rent in rents)
+            {
+                if (rent.Customer.Id==id)
+                {
+                    exist = true;
+                }
+            }
+
+            if (exist==false)
+            {
+                _customerRepository.Delete(id);
+            }
             return RedirectToAction(nameof(Index));            
         }
     }
