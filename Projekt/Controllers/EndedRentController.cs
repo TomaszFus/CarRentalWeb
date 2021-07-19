@@ -21,7 +21,7 @@ namespace Projekt.Controllers
             return View(_rentRepository.GetEndedRents());
         }
 
-        // GET: EndedRentController/Details/5
+        // GET: EndedRent/Details
         public ActionResult Details(int id)
         {
             return View(_rentRepository.Get(id));

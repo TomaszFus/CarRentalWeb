@@ -24,19 +24,19 @@ namespace Projekt.Controllers
             return View(_customerRepository.GetAllCustomers());
         }
 
-        // GET: CustomerController/Details
+        // GET: CustomerC/Details
         public ActionResult Details(int id)
         {
             return View(_customerRepository.Get(id));
         }
 
-        // GET: CustomerController/Create
+        // GET: Customer/Create
         public ActionResult Create()
         {
             return View(new CustomerModel());
         }
 
-        // POST: CustomerController/Create
+        // POST: Customer/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create(CustomerModel customerModel)
@@ -45,13 +45,13 @@ namespace Projekt.Controllers
             return RedirectToAction(nameof(Index));            
         }
 
-        // GET: CustomerController/Edit
+        // GET: Customer/Edit
         public ActionResult Edit(int id)
         {
             return View(_customerRepository.Get(id));
         }
 
-        // POST: CustomerController/Edit
+        // POST: Customer/Edit
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit(int id, CustomerModel customerModel)
@@ -60,13 +60,13 @@ namespace Projekt.Controllers
             return RedirectToAction(nameof(Index));            
         }
 
-        // GET: CustomerController/Delete
+        // GET: Customer/Delete
         public ActionResult Delete(int id)
         {
             return View(_customerRepository.Get(id));
         }
 
-        // POST: CustomerController/Delete
+        // POST: Customer/Delete
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Delete(int id, CustomerModel customerModel)

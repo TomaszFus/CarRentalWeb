@@ -13,7 +13,9 @@ namespace Projekt.Models
     {
         [Key]
         public int Id { get; set; }
+        [Required(ErrorMessage ="Wybierz samochód")]
         public CarModel Car { get; set; }
+        [Required(ErrorMessage = "Wybierz klienta")]
         public CustomerModel Customer { get; set; }
         [DisplayName("Data wypożyczenia")]
         public DateTime RentDate { get; set; }

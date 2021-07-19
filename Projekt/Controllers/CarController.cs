@@ -73,10 +73,12 @@ namespace Projekt.Controllers
         public ActionResult Delete(int id, CarModel carModel)
         {
             var car = _carRepository.Get(id);
+            
             if (car.Availability==true)
             {
                 _carRepository.Delete(id);
             }
+            
             return RedirectToAction(nameof(Index));
             
         }

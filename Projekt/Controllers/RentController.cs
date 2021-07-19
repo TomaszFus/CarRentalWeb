@@ -27,13 +27,13 @@ namespace Projekt.Controllers
             return View(_rentRepository.GetAllRents());
         }
 
-        // GET: Rent/Details/5
+        // GET: Rent/Details
         public ActionResult Details(int id)
         {
             return View(_rentRepository.Get(id));
         }
 
-        // GET: RentController/Create
+        // GET: Rent/Create
         public ActionResult Create()
         {
             var cars = _carRepository.GetAvailableCars();
@@ -46,7 +46,7 @@ namespace Projekt.Controllers
             return View(new RentModel());
         }
 
-        // POST: RentController/Create
+        // POST: Rent/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Create(RentModel rentModel)
@@ -57,7 +57,7 @@ namespace Projekt.Controllers
             return RedirectToAction(nameof(Index));
         }
 
-        // GET: RentController/Edit/5
+        // GET: Rent/Edit
         public ActionResult Edit(int id)
         {
             var rent = _rentRepository.Get(id);
@@ -74,7 +74,7 @@ namespace Projekt.Controllers
             return View(_rentRepository.Get(id));
         }
 
-        // POST: RentController/Edit/5
+        // POST: Rent/Edit
         [HttpPost]
         [ValidateAntiForgeryToken]
         public ActionResult Edit(int id, RentModel rentModel)
@@ -84,25 +84,6 @@ namespace Projekt.Controllers
             
         }
 
-        // GET: RentController/Delete/5
-        public ActionResult Delete(int id)
-        {
-            return View();
-        }
-
-        // POST: RentController/Delete/5
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Delete(int id, IFormCollection collection)
-        {
-            try
-            {
-                return RedirectToAction(nameof(Index));
-            }
-            catch
-            {
-                return View();
-            }
-        }
+        
     }
 }
